@@ -3,6 +3,10 @@
   padding: 0;
   user-select: none;
 }
+@font-face {
+  font-family: myFont;
+  src: url(./assets/font/CascadiaCode.ttf);
+}
 body {
   height: 100vh;
   display: flex;
@@ -35,7 +39,7 @@ body {
 .code_title input {
   border: none;
   width: 100%;
-  font-family: cascadia code;
+  font-family: myFont;
   font-size: large;
   background: none;
   text-align: center;
@@ -109,7 +113,7 @@ body {
   height: -webkit-fill-available;
   width: -webkit-fill-available;
   margin: 10px;
-  font-family: cascadia code;
+  font-family: myFont;
   border: none;
   background: none;
   text-shadow: 0 0 10px #ffffffb3;
