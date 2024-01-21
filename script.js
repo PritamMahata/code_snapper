@@ -185,7 +185,7 @@ function changeBackgroundImage() {
   currentImageIndex = (currentImageIndex + 1) % imagePaths.length;
   document.body.style.backgroundImage = `url(${imageUrl})`;
 }
-// setInterval(changeBackgroundImage, 10000); // auto background image change
+// setInterval(changeBackgroundImage, 500000); // auto background image change
 changeBackgroundImage(); // reload to change background image
 
 const randomTexts = [
@@ -227,9 +227,7 @@ function getRandomText() {
 function displayRandomText() {
   const ester_egg = document.getElementById("codeInput_id").value;
   const quoteContainer = document.getElementById("quote-container");
-  console.log(ester_egg);
   if (ester_egg == "hello world") {
-    console.log("yes");
     const randomTextContainer = document.getElementById("codeInput_id");
     randomTextContainer.textContent = getRandomText();
     quoteContainer.innerHTML = `<textarea
@@ -238,8 +236,6 @@ function displayRandomText() {
     placeholder="${randomTextContainer.textContent}"
     id="codeInput_id"
   ></textarea>`;
-  } else {
-    console.log("no");
   }
 }
 
