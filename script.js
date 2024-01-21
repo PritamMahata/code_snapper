@@ -188,33 +188,60 @@ function changeBackgroundImage() {
 // setInterval(changeBackgroundImage, 10000); // auto background image change
 changeBackgroundImage(); // reload to change background image
 
-async function redirectToWebsite() {
-  // var ester_egg = document.getElementById("fileName").value;
-  // if (ester_egg == "hello world") {
-    try {
-      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-      const apiUrl = 'http://programming-quotes-api.herokuapp.com/quotes/random';
-      const response = await fetch(proxyUrl + apiUrl);
-  
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-  
-      const quoteData = await response.json();
-      const quoteContainer = document.getElementById('quote-container');
-  
-      // Update the HTML content with the received quote
-      quoteContainer.innerHTML = `<blockquote>
-        <p>${quoteData.en}</p>
-        <footer>${quoteData.author}</footer>
-      </blockquote>`;
-    } catch (error) {
-      console.error('Error:', error.message);
-    }
+const randomTexts = [
+  "Software comes from heaven when you have good hardware. \n― Ken Olsen",
+  "There is always one more bug to fix.  \n― Ellen Ullman",
+  "If debugging is the process of removing bugs, then programming must be the process of putting them in. \n― Sam Redwine",
+  "Talk is cheap. Show me the code. \n― Linus Torvalds",
+  "Sometimes it pays to stay in bed on Monday, rather than spending the rest of the week debugging Monday’s code. \n― Dan Salomon",
+  "If, at first, you do not succeed, call it version 1.0. \n― Khayri R.R. Woulfe",
+  "Computers are fast; developers keep them slow. \n― Anonymous",
+  "Programmers seem to be changing the world. It would be a relief, for them and for all of us, if they knew something about it.  \n― Ellen Ullman",
+  "Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program. \n― Linus Torvalds",
+  "Programmer: A machine that turns coffee into code. \n― Anonymous",
+  "When I wrote this code, only God and I understood what I did. Now only God knows.  \n― Anonymous",
+  "I’m not a great programmer; I’m just a good programmer with great habits. \n― Kent Beck",
+  "You might not think that programmers are artists, but programming is an extremely creative profession. It’s logic-based creativity. \n― John Romero",
+  "Programming is learned by writing programs. \n― Brian Kernighan",
+  "Software is like sex: it’s better when it’s free. \n― Linus Torvalds",
+  "If we want users to like our software, we should design it to behave like a likable person.  \n― Alan Cooper",
+  "Quality is a product of a conflict between programmers and testers. \n― Yegor Bugayenk",
+  "Everybody should learn to program a computer because it teaches you how to think. \n― Steve Jobs",
+  "I taught myself how to program computers when I was a kid, bought my first computer when I was 10, and sold my first commercial program when I was 12. \n― Elon Musk",
+  "Software and cathedrals are much the same — first we build them, then we pray.",
+  "Web development is difficult, only then it is fun to do. You just have to set your standards. If it were to be easy, would anyone do it? \n― Olawale Daniel",
+  "Programming is the art of algorithm design and the craft of debugging errant code. \n― Ellen Ullman",
+  "Programming today is a race between software engineers striving to build bigger and better idiot-proof programs and the Universe trying to produce bigger and better idiots. So far, the Universe is winning. \n― Rick Cook",
+  "Any fool can write code that a computer can understand. Good programmers write code that humans can understand. \n― Martin Fowler",
+  "Experience is the name everyone gives to their mistakes. \n― Oscar Wilde",
+  "Programming is the art of telling another human being what one wants the computer to do. \n― Donald Ervin Knuth",
+  "Confusion is part of programming. \n― Felienne Hermans",
+  "No matter which field of work you want to go in, it is of great importance to learn at least one programming language. \n― Ram Ray",
+];
+
+function getRandomText() {
+  const randomIndex = Math.floor(Math.random() * randomTexts.length);
+  return randomTexts[randomIndex];
+}
+
+function displayRandomText() {
+  const ester_egg = document.getElementById("codeInput_id").value;
+  const quoteContainer = document.getElementById("quote-container");
+  console.log(ester_egg);
+  if (ester_egg == "hello world") {
+    console.log("yes");
+    const randomTextContainer = document.getElementById("codeInput_id");
+    randomTextContainer.textContent = getRandomText();
+    quoteContainer.innerHTML = `<textarea
+    type="text"
+    class="codeInput"
+    placeholder="${randomTextContainer.textContent}"
+    id="codeInput_id"
+  ></textarea>`;
+  } else {
+    console.log("no");
   }
-// }
-
-
+}
 
 // unplash background image api
 
