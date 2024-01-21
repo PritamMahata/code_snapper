@@ -174,6 +174,10 @@ function changeBackgroundImage() {
 // setInterval(changeBackgroundImage, 10000); // auto background image change
 changeBackgroundImage(); // reload to change background image
 
+function redirectToWebsite() {
+  const websiteUrl = "https://pritam-mahata.netlify.app";
+  window.open(websiteUrl, "_blank");
+}
 // unplash background image api
 
 // const accessKey = 'add your unplash api key';
