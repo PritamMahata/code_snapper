@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<script type="module">
+  import * as prettier from "https://unpkg.com/prettier@3.2.4/standalone.mjs";
+  import prettierPluginBabel from "https://unpkg.com/prettier@3.2.4/plugins/babel.mjs";
+  import prettierPluginEstree from "https://unpkg.com/prettier@3.2.4/plugins/estree.mjs";
+</script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>code_snapper</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+        <div class="control">
+          <div class="circle tooltip" id="first" onclick="closeWebsite()">
+            <span class="tooltiptext">close</span>
+          </div>
+          <div class="circle tooltip" id="second" onclick="resizeWindow()">
+            <span class="tooltiptext">Resize</span>
+          </div>
+          <div class="circle tooltip" id="third">
+            <span class="tooltiptext">Tooltip text</span>
+          </div>
+        </div>
+        <div class="code_title">
+          <input type="text" placeholder="Untitled" id="fileName" />
+        </div>
+        <div class="buttons">
+          <button
+            onclick="clearInput()"
+            class="button-30"
+            id="clearBtn"
+            role="button"
+          >
+            <img src="./assets/rubber.png" alt="" srcset="" />
+          </button>
+          <button
+            onclick="downloadFile()"
+            class="button-30"
+            id="downloadBtn"
+            role="button"
+          >
+            <img src="./assets/download.png" alt="" srcset="" />
+          </button>
+          <button
+            onclick="changeBackgroundImage()"
+            class="button-30"
+            id="reloadBtn"
+            role="button"
+          >
+            <img src="./assets/refresh.png" alt="" srcset="" />
+          </button>
+        </div>
+      </div>
+      <div class="code_block">
+        <textarea
+          type="text"
+          class="codeInput"
+          placeholder="write your imagintion..."
+          id="codeInput_id"
+        ></textarea>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
