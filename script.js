@@ -192,8 +192,9 @@ async function redirectToWebsite() {
   // var ester_egg = document.getElementById("fileName").value;
   // if (ester_egg == "hello world") {
     try {
-      const apiUrl = 'https://programming-quotes-api.herokuapp.com/quotes/random';
-      const response = await fetch(apiUrl);
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      const apiUrl = 'http://programming-quotes-api.herokuapp.com/quotes/random';
+      const response = await fetch(proxyUrl + apiUrl);
   
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
