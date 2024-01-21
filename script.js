@@ -12,7 +12,9 @@ function downloadFile() {
 
 function clearInput() {
   var inputElement = document.getElementById("codeInput_id");
+  var filenameElement = document.getElementById("fileName");
   inputElement.value = "";
+  filenameElement.value = "";
 }
 
 function closeWebsite() {
@@ -186,9 +188,34 @@ function changeBackgroundImage() {
 // setInterval(changeBackgroundImage, 10000); // auto background image change
 changeBackgroundImage(); // reload to change background image
 
-// function redirectToWebsite() {
-         
+async function redirectToWebsite() {
+  // var ester_egg = document.getElementById("fileName").value;
+  // if (ester_egg == "hello world") {
+    try {
+      const apiUrl ="http://programming-quotes-api.herokuapp.com/quotes/random";
+      const response = await fetch(apiUrl);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const quoteData = await response.json();
+      const quoteContainer = document.getElementById("quote-container");
+
+      // Update the HTML content with the received quote
+      quoteContainer.innerHTML = `<blockquote>
+          <p>${quoteData.en}</p>
+          <footer>${quoteData.author}</footer>
+        </blockquote>`;
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  }
 // }
+
+redirectToWebsite();
+
+
 // unplash background image api
 
 // const accessKey = 'add your unplash api key';
