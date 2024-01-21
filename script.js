@@ -21,17 +21,29 @@ function closeWebsite() {
   }
 }
 
+let device = 0;
+if (window.innerWidth < 600) {
+  device = 0;
+  console.log("mobile");
+} else {
+  device = 1;
+  console.log("desktop");
+}
+
 function resizeWindow() {
-  let state = 0;
-  var divElement = document.getElementById("main");
-  if (divElement.style.width == "100%") {
-    divElement.style.width = "70%";
-    divElement.style.height = "70%";
-    state = 1;
+  var maindivElement = document.getElementById("main");
+  if (maindivElement.style.width == "100%" && device == 0) {
+    maindivElement.style.width = "90%";
+    maindivElement.style.height = "45%";
+    console.log("mobile fullscreen");
+  } else if (maindivElement.style.width == "100%" && device == 1) {
+    maindivElement.style.width = "70%";
+    maindivElement.style.height = "70%";
+    console.log("desktop fullscreen");
   } else {
-    divElement.style.width = "100%";
-    divElement.style.height = "100%";
-    state = 0;
+    maindivElement.style.width = "100%";
+    maindivElement.style.height = "100%";
+    wide_screen = false;
   }
 }
 
