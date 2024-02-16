@@ -10,7 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>code_snapper</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://pyscript.net/releases/2023.11.2/core.css"
+    />
+    <script
+      type="module"
+      src="https://pyscript.net/releases/2023.11.2/core.js"
+    ></script>
   </head>
   <body>
     <div id="main">
@@ -22,8 +30,11 @@
           <div class="circle tooltip" id="second" onclick="resizeWindow()">
             <span class="tooltiptext">Resize</span>
           </div>
-          <div class="circle tooltip" id="third" onclick="displayRandomText()">
-          </div>
+          <div
+            class="circle tooltip"
+            id="third"
+            onclick="displayRandomText()"
+          ></div>
         </div>
         <div class="code_title">
           <input type="text" placeholder="Untitled" id="fileName" />
@@ -35,7 +46,7 @@
             id="clearBtn"
             role="button"
           >
-            <img src="./assets/rubber.png" alt="" srcset="" />
+            <img src="./assets//icons/rubber.png" alt="" />
           </button>
           <button
             onclick="downloadFile()"
@@ -43,7 +54,7 @@
             id="downloadBtn"
             role="button"
           >
-            <img src="./assets/download.png" alt="" srcset="" />
+            <img src="./assets/icons/download.png" alt="" />
           </button>
           <button
             onclick="changeBackgroundImage()"
@@ -51,7 +62,7 @@
             id="reloadBtn"
             role="button"
           >
-            <img src="./assets/refresh.png" alt="" srcset="" />
+            <img src="./assets//icons/refresh.png" alt="" />
           </button>
         </div>
       </div>
@@ -62,6 +73,10 @@
           placeholder="write your imagination..."
           id="codeInput_id"
         ></textarea>
+        <script type="py" terminal worker>
+          name = input("What is your name? ")
+          print(f"Hello, {name}")
+          </script>
       </div>
     </div>
   </body>
